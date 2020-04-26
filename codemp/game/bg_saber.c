@@ -2350,7 +2350,7 @@ saberMoveName_t PM_SaberAttackForMovement(saberMoveName_t curmove)
 				pm->ps->fd.forceRageRecoveryTime < pm->cmd.serverTime &&
 				//pm->ps->fd.forcePowerLevel[FP_LEVITATION] > FORCE_LEVEL_1 &&
 				(pm->ps->groundEntityNum != ENTITYNUM_NONE || PM_GroundDistance() <= 40) &&
-				pm->ps->velocity[2] >= 0 &&
+				pm->ps->velocity[2] >= 100 && // 0, fix gbtfl, AFI
 				(pm->cmd.upmove > 0 || pm->ps->pm_flags & PMF_JUMP_HELD) &&
 				!BG_SaberInTransitionAny(pm->ps->saberMove) &&
 				!BG_SaberInAttack(pm->ps->saberMove) &&
