@@ -4127,12 +4127,14 @@ static QINLINE qboolean CheckSaberDamage(gentity_t *self, int rSaberNum, int rBl
 				}
 			}
 			*/
-			if ( level.gametype != GT_DUEL
+
+			/*if ( level.gametype != GT_DUEL
 				&& level.gametype != GT_POWERDUEL
 				&& level.gametype != GT_SIEGE )
 			{//in faster-paced games, sabers do more damage
 				fDmg *= 2.0f;
-			}
+			} */ //make damage the same in all gamemodes #AFI
+
 			if ( fDmg )
 			{//the longer the trace, the more damage it does
 				//FIXME: in SP, we only use the part of the trace that's actually *inside* the hit ent...
