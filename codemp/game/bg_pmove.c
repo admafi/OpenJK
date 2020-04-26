@@ -4234,7 +4234,7 @@ static void PM_GroundTrace( void ) {
 		if ( pml.previous_velocity[2] < -200 ) {
 			// don't allow another jump for a little while
 			pm->ps->pm_flags |= PMF_TIME_LAND;
-			pm->ps->pm_time = 250;
+			pm->ps->pm_time = 250; //this is responsible for wallclipping #AFI
 		}
 	}
 
@@ -5309,7 +5309,7 @@ static void PM_Footsteps( void ) {
 
 		bobmove = 0.5;	// ducked characters bob much faster
 
-		if ( ( (PM_RunningAnim( pm->ps->legsAnim )&&VectorLengthSquared(pm->ps->velocity)>=40000/*200*200*/) || PM_CanRollFromSoulCal( pm->ps ) ) &&
+		if ( ( (PM_RunningAnim( pm->ps->legsAnim )&&VectorLengthSquared(pm->ps->velocity)>=20000/*200*200*/) || PM_CanRollFromSoulCal( pm->ps ) ) && //40000->20000 allows to roll backwards #AFI
 			!BG_InRoll(pm->ps, pm->ps->legsAnim) )
 		{//roll!
 			rolled = PM_TryRoll();
