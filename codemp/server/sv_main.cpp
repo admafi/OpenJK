@@ -955,7 +955,12 @@ qboolean SV_CheckPaused( void ) {
 	client_t	*cl;
 	int		i;
 
-	if ( !cl_paused->integer ) {
+	//dont make the game pause at any time for testing purposes #AFI
+
+	Cvar_Set("sv_paused", "0");
+	return qfalse;
+
+	/*if ( !cl_paused->integer ) {
 		return qfalse;
 	}
 
@@ -976,7 +981,8 @@ qboolean SV_CheckPaused( void ) {
 
 	if (!sv_paused->integer)
 		Cvar_Set("sv_paused", "1");
-	return qtrue;
+	return qtrue; */
+
 }
 
 /*
