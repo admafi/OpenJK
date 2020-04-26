@@ -2605,7 +2605,7 @@ qboolean PM_RunningAnim( int anim );
 
 qboolean PM_SaberMoveOkayForKata( void )
 {
-	if ( pm->ps->saberMove == LS_READY
+	if ( pm->ps->saberMove == BOTH_STAND2 //LS_READY, fixes katas without saber turned on and broken animations by doing two katas in a row when the saber was turned off on the first one, #AFI
 		|| PM_SaberInStart( pm->ps->saberMove ) )
 	{
 		return qtrue;
